@@ -115,26 +115,21 @@ app.get('/editarMensaje/:id', (req, res) => {
 });
 
 
-app.put('/editar/:id', (req, res) =>{
+app.post('/editar/:id', (req, res) =>{
 
     MongoClient.connect(process.env.MONGOLOCAL, (error, db) =>{
         const database = db.db('Foro');
         if (error) {
-            console.log(`No estamos conectados a la Database`);
         }else{
-            console.log(`Conexion correcta a la Database`);
-
             let ObjectId = mongodb.ObjectId;
             let id = req.params.id;
-
-            console.log(ObjectId(id));
             
             const { nombre, email, mensaje} = req.body;
 
             database.collection('foro').findOne({_id: ObjectId(id)}, {$set: {nombre, email, mensaje}} ,(error, result) => {
                 error? console.log(error.message) :
                 database.collection('foro').replaceOne({_id: ObjectId(id)},{nombre, email, mensaje}, )
-                    res.redirect('formulario')
+                    res.redirect('/formulario')
                 })
         }
     })

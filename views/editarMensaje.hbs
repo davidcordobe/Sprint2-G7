@@ -1,5 +1,5 @@
 <!-- Input de mail del alumno -->
-<form class="formstyle formulario text-center container" action="/editar/{{ result._id }}?_method=PUT " method="put">
+<form class="formstyle formulario text-center container" action="/editar/{{ result._id }}?_method=PUT " method="POST">
 
     <label for="formGroupExampleInput" name="nombre" class="form-label">Nombre del alumno</label>
     <input type="text" class="form-control" name="nombre" id="formGroupExampleInput" placeholder="Nombre"  value= "{{ result.nombre }}">

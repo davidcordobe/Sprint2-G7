@@ -65,12 +65,13 @@ footer {
     }
 }
 
-#borrar{
+.editarBorrar{
     text-decoration: none;
-    color: #F70404;
-    font-size: 15px;
+    color: #11c401;
+    font-size: 20px;
 }
 
-#borrar:hover{
-    color: #854949;
+.editarBorrar:hover{
+    color: #b80000;
+    border: 1px solid #b80000;
 }
