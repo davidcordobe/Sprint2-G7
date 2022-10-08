@@ -1,0 +1,24 @@
+{
+  "dependencies": {
+    "dotenv": "^16.0.2",
+    "express": "^4.18.1",
+    "hbs": "^4.2.0",
+    "mongodb": "^4.10.0",
+    "mysql2": "^2.3.3",
+    "path": "^0.12.7",
+    "yarn": "^1.22.19"
+  },
+  "name": "proyectogrupal",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon index.js",
+    "dependencias": "yarn add express dotenv hbs mysql2 path"
+  },
+  "keywords": [],
+  "author": "Grupo_7",
+  "license": "ISC",
+  "description": "",
+  "repository": "https://github.com/davidcordobe/trabajoGrupal"
+}

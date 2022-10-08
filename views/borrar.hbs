@@ -1,0 +1,32 @@
+<div class="container">
+  <div class="text-center m-5">
+    <hr>
+    <h1>
+      {{ titulo }}
+    </h1>
+    <hr>
+  </div>
+  <div class="row">
+    <table class="table table-borderless">
+      <thead>
+        <tr>
+          <th>Id</th>
+          <th scope="col">Nombre</th>
+          <th scope="col">Email</th>
+          <th scope="col">Mensaje</th>
+        </tr>
+      </thead>
+      <tbody>
+        {{#each results}}
+        <tr>
+          <td>{{this.id}}</td>
+          <th scope="row">{{ this.nombre }}</th>
+          <td>{{ this.email }}</td>
+          <td>{{ this.mensaje }}</td>
+          <td><a href="./formulario/{{ this.id }}">Borrar</a></td>
+        </tr>
+        {{/each}}
+      </tbody>
+    </table>
+  </div>
+</div>

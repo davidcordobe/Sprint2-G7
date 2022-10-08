@@ -1,0 +1,58 @@
+<!-- Input de mail del alumno -->
+<form class="formstyle formulario text-center container" action="/formulario" method="post">
+
+    <label for="formGroupExampleInput" name="nombre" class="form-label">Nombre del alumno</label>
+    <input type="text" class="form-control" name="nombre" id="formGroupExampleInput" placeholder="Nombre">
+
+    <label for="formGroupExampleInput2" name="email" class="form-label">Email del almuno</label>
+    <input type="email" class="form-control"  name="email" id="formGroupExampleInput2" placeholder="Email@ejemplo.com">
+
+
+    <!-- Input de mensaje -->
+    <label for="exampleFormControlTextarea1" name="mensaje" class="form-label">Escribe tu opinion</label>
+    <textarea class="form-control mb-5" name="mensaje" id="exampleFormControlTextarea1" rows="3"></textarea>
+
+    <div class="mb-3 text-center">
+        <button type="submit" class="button btn btn-success w-50 p-2" id="enviar">Enviar Datos</button>
+    </div>
+
+    <div class="text-center">
+        <h2 class="text-danger">
+            {{ validacion }}
+        </h2>
+        <h2 class="text-success">
+            {{ envioDatos}}
+        </h2>
+</form>
+
+<hr>
+
+<hr>
+
+<div class="container">
+    <div class="text-center m-5">
+        <h2>
+            :::  Comentarios  :::
+        </h2>
+    </div>
+    <table class="table table-dark table-hover">
+        <thead>
+            <th>Nombre</th>
+            <th>Email</th>
+            <th>Mensaje</th>
+            <th>Borrar</th>
+            <th>Editar</th>
+        </thead>
+        <tbody>
+            {{#each result}}
+            <tr>
+                <td>{{this.nombre}}</td>
+                <td>{{this.email}}</td>
+                <td>{{this.mensaje}}</td>
+                <td><a href="/formulario/{{_id}}">Borrar</a></td>
+                <td><a href="/editarMensaje/{{_id}}">Editar</a></td>
+            </tr>
+            {{/each}}
+        </tbody>
+    </table>
+</div>

@@ -1,0 +1,76 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+footer {
+    background-color: rgb(207, 223, 241);
+    display: flex;
+    justify-content: center;
+    margin-top: auto;
+}
+
+.formulario {
+    font-family: 'Times New Roman', Times, serif;
+    background-color: rgba(255, 255, 255, 0.836);
+    align-items: center;
+    justify-content: center;
+    display: center;
+}
+
+.bienvenida {
+    font-size: 30px;
+    font-family: 'Courier New', Courier, monospace;
+    text-align: center;
+}
+
+.imgindex {
+    display: flex;
+    justify-content: center;
+}
+
+@media only screen and (max-width: 768px) {
+    .bienvenida {
+        font-size: 30px;
+        font-family: 'Courier New', Courier, monospace;
+        text-align: center;
+    }
+
+    .imgindex {
+        width: 500px !important;
+        display: flex;
+        justify-content: center;
+    }
+}
+
+;
+
+@media only screen and (max-width: 420px) {
+    .bienvenida {
+        font-size: 30px;
+        font-family: 'Courier New', Courier, monospace;
+        text-align: center;
+    }
+    .imgindex {
+        width: 100px !important;
+        display: flex;
+        justify-content: center;
+    }
+}
+
+#borrar{
+    text-decoration: none;
+    color: #F70404;
+    font-size: 15px;
+}
+
+#borrar:hover{
+    color: #854949;
+}
