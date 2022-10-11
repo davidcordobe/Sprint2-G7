@@ -10,10 +10,10 @@ const app = express();
 const PORT = process.env.PORT;
 
 const MongoClient = mongodb.MongoClient;
-const MONGOLOCAL = process.env.MONGOLOCAL;
+const MONGOATLAS = process.env.MONGOATLAS;
 
 try {
-    MongoClient.connect(MONGOLOCAL, {
+    MongoClient.connect(MONGOATLAS, {
         useNewUrlParser: true, 
         useUnifiedTopology: true,
     });
@@ -32,12 +32,6 @@ try {
 //     database: process.env.DATABASE
 // });
 
-
-// CONEXCION A MONGODB ------------------------------------------
-
-// MongoClient.connect(process.env.HOST, (err, db) =>{
-//     const database = db.db(process.env.DATABASE)
-// });
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
@@ -70,7 +64,7 @@ app.get('/', (req, res) => {
 
 app.get('/formulario', (req, res) =>{
 
-    MongoClient.connect(process.env.MONGOLOCAL, (error, db) =>{
+    MongoClient.connect(process.env.MONGOATLAS, (error, db) =>{
         const database = db.db('Foro');
         if (error) {
             console.log(`No estamos conectados a la Database`);
@@ -91,7 +85,7 @@ app.get('/formulario', (req, res) =>{
 
 
 app.get('/editarMensaje/:id', (req, res) => {
-    MongoClient.connect(process.env.MONGOLOCAL, (error, db) =>{
+    MongoClient.connect(process.env.MONGOATLAS, (error, db) =>{
         const database = db.db('Foro');
         if (error) {
             console.log(`No estamos conectados a la Database`);
@@ -117,7 +111,7 @@ app.get('/editarMensaje/:id', (req, res) => {
 
 app.post('/editar/:id', (req, res) =>{
 
-    MongoClient.connect(process.env.MONGOLOCAL, (error, db) =>{
+    MongoClient.connect(process.env.MONGOATLAS, (error, db) =>{
         const database = db.db('Foro');
         if (error) {
         }else{
@@ -138,7 +132,7 @@ app.post('/editar/:id', (req, res) =>{
 
 app.get('/formulario/:id', (req, res) => {
 
-    MongoClient.connect(process.env.MONGOLOCAL, (error, db) =>{
+    MongoClient.connect(process.env.MONGOATLAS, (error, db) =>{
         const database = db.db('Foro');
         if (error) {
             
@@ -221,7 +215,7 @@ app.post('/formulario', (req, res) => {
     
     const { nombre, email, mensaje } = req.body;
             
-    MongoClient.connect(process.env.MONGOLOCAL, (error, db) =>{
+    MongoClient.connect(process.env.MONGOATLAS, (error, db) =>{
         const database = db.db('Foro');
         if (error) {
             console.log(`No estamos conectados a la Database`);
