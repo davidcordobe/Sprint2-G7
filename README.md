@@ -18,11 +18,11 @@ Alvaro Seisas
 
 PORT= 8080
 
-USER= root
+MONGOLOCAL=
 
-PASSWORD = 'Su contraseña'
+MONGOATLAS=
 
-DATABASE= grupo
+DATABASE= foro
 
 3. ejecutar la query guardada en la carpeta database en su workbench local
 
@@ -33,5 +33,5 @@ automaticamente le instalará las dependencias necesarias para el arranque de la
 
 6. vaya a localhost:8080 en su navegador y deberia estar operativo la pagina con la base de datos conectada y funcionando.
 
-7. la pagina se encuentra deployada en heroku: https://grupo-7.herokuapp.com/
+7. la pagina se encuentra deployada en heroku: https://grupo7-mongo.herokuapp.com/
 
